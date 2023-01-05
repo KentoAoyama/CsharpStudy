@@ -17,11 +17,6 @@ public class ObserverRx : MonoBehaviour
             //V‚µ‚¢ŠÄ‹‘ÎÛ‚ğw“Ç‚µA’l‚ª•Ï‰»‚µ‚½‚Æ‚«‚Ìˆ—‚ğ“o˜^‚·‚é
             subject.SubjectUniRx.Subscribe(i => Finished(i));
 
-            //subject.SubjectUniRx
-            //    .DelayFrame(300)
-            //    .Select(i => i += 100)
-            //    .Subscribe(i => OnFinished(i));
-
             //ŠÄ‹‘ÎÛ‚ğ3•bŒã‚Éíœ
             Destroy(subjectObject, 3.0f);
         }
