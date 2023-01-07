@@ -17,8 +17,6 @@ public class Subject : MonoBehaviour, IObservable<int>
         //observerが重複しないように、すでに自分を監視していないかチェック
         if (!_observers.Contains(observer))
         {
-
-
             _observers.Add(observer);
         }
 

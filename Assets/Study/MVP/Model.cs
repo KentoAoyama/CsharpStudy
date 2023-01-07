@@ -8,8 +8,6 @@ namespace MVP
 {
     public class Model
     {
-        //ReactiveProperty
-
         private Subject<int> _score = new();
 
         //このインスタンスのScoreを参照できるようにする
