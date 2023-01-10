@@ -22,7 +22,7 @@ namespace MVP
             {
                 //オブジェクトを生成し、そのコンポーネントを取得
                 var scoreObject = Instantiate(_scoreObject);
-                var score = scoreObject.GetComponent<ScoreObject>();
+                var score = scoreObject.GetComponent<ModelObject>();
 
                 //新しい監視対象を購読し、値が変化したときの処理を登録する
                 score.Score.Subscribe(i => _view.SetScore(i));

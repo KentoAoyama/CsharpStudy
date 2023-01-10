@@ -2,19 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UniRx;
 
 namespace MVP
 {
-    public class ScoreObject : MonoBehaviour
+    public class ModelObject : MonoBehaviour
     {
-        Model _model = new();
+        private Subject<int> _score = new();
 
-        //ModelのScoreを参照できるようにする
-        public IObservable<int> Score => _model.Score;
+        //このインスタンスのScoreを参照できるようにする
+        public IObservable<int> Score => _score;
+
+        public void Finished()
+        {
+            var answer = UnityEngine.Random.Range(0, 10);
+
+            _score.OnNext(answer);
+
+            //適宜インスタンスを破棄する
+            _score.Dispose();
+        }
+
 
         private void OnDisable()
         {
-            _model.Finished();
+            Finished();
         }
     }
 }
