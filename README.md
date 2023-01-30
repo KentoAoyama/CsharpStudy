@@ -7,3 +7,4 @@
 * Factoryパターン
 * Observerパターン
 * MVPパターン
+* Zenject
