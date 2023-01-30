@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SubjectEasy : MonoBehaviour
+public class SubjectEvent : MonoBehaviour
 {
     // コールバックの登録用のAction
     public event Action<int> OnFinished;

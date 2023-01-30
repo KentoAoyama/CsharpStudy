@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObserverEasy : MonoBehaviour
+public class ObserverEvent : MonoBehaviour
 {
     [SerializeField]
     private GameObject _subjectPrefab;
@@ -11,7 +11,7 @@ public class ObserverEasy : MonoBehaviour
         {
             //オブジェクトを生成し、そのSubjectコンポーネントを取得
             var go = Instantiate(_subjectPrefab);
-            var subject = go.GetComponent<SubjectEasy>();
+            var subject = go.GetComponent<SubjectEvent>();
 
             // 監視対象が消えたらコールバック(監視対象を購読)
             subject.OnFinished += Finished;

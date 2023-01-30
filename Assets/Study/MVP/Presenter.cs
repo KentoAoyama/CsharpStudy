@@ -11,13 +11,14 @@ namespace MVP
         [SerializeField]
         private View _view;
 
-        [Header("Scoreを発行するGameObject")]
+        [Header("Scoreを発行するModel")]
         [SerializeField]
         private GameObject _scoreObject;
 
 
         void Update()
         {
+            //今回はPresenter内で生成と破棄を行っているが、実際はあまりよくない
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 //オブジェクトを生成し、そのコンポーネントを取得
