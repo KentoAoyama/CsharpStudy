@@ -5,7 +5,7 @@ public class SubjectRx : MonoBehaviour
 {
     private ReactiveProperty<int> _subjectUniRx = new();
 
-    //このインスタンスのSubjectを参照できるようにする
+    //このインスタンスのReactivePropertyを参照できるようにする
     public IReadOnlyReactiveProperty<int> SubjectUniRx => _subjectUniRx;
 
     private void OnDisable()
