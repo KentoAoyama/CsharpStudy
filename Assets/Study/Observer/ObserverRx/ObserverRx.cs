@@ -15,18 +15,23 @@ public class ObserverRx : MonoBehaviour
             var subject = subjectObject.GetComponent<SubjectRx>();
 
             //新しい監視対象を購読し、値が変化したときの処理を登録する
-            subject.SubjectUniRx.Subscribe(Finished);
+            subject.SubjectUniRx
+                .Subscribe(i => Finished(i))
+                .AddTo(gameObject);
 
             //Operator使用例
-            //subject.SubjectUniRx.Where(n => n > 5).Subscribe(Finished);
+            subject.SubjectUniRx
+                .Where(n => n > 5)
+                .Subscribe(Finished)
+                .AddTo(gameObject);
 
             //監視対象を3秒後に削除
             Destroy(subjectObject, 3.0f);
         }
     }
 
-    private void Finished(int score)
+    private void Finished(int value)
     {
-        Debug.Log($"Subjectからスコアが発行されました。Scoreは｛{score}｝です");
+        Debug.Log($"Subjectからスコアが発行されました。Scoreは｛{value}｝です");
     }
 }

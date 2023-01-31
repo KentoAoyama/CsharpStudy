@@ -26,7 +26,7 @@ namespace MVP
                 var score = scoreObject.GetComponent<ModelObject>();
 
                 //V‚µ‚¢ŠÄ‹‘ÎÛ‚ğw“Ç‚µA’l‚ª•Ï‰»‚µ‚½‚Æ‚«‚Ìˆ—‚ğ“o˜^‚·‚é
-                score.Score.Subscribe(i => _view.SetScore(i));
+                score.Score.Subscribe(_view.SetScore);
 
                 //ŠÄ‹‘ÎÛ‚ğ3•bŒã‚Éíœ
                 Destroy(scoreObject, 3.0f);
