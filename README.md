@@ -9,3 +9,5 @@
 * Observerパターン
 * MVPパターン
 * Zenject
+* UnityWebRequest
+* AssetBundle
