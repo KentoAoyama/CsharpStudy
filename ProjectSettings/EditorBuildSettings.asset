@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Study/AssetBundle/AssetBundle.unity
+    guid: cf11b0ad24148554997e18cf4fbec416
   m_configObjects: {}
