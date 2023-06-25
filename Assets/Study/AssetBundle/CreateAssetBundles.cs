@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+
 using UnityEditor;
 using System.IO;
 
@@ -13,7 +14,7 @@ public class CreateAssetBundles
             Directory.CreateDirectory(assetBundleDirectory);
         }
         BuildPipeline.BuildAssetBundles(assetBundleDirectory,
-                                        BuildAssetBundleOptions.None,
+                                        BuildAssetBundleOptions.ChunkBasedCompression,
                                         BuildTarget.StandaloneWindows);
     }
 
