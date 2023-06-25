@@ -9,7 +9,7 @@ public class WebRequestAPI : MonoBehaviour
     private const string apiEndpoint = "https://api.openai.com/v1/chat/completions";
 
     // ChatGPT APIキー
-    private const string apiKey = "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";
+    private const string apiKey = "";
 
     // リクエストのヘッダー
     private const string authorizationHeader = "Bearer " + apiKey;
