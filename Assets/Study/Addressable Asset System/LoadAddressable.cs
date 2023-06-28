@@ -17,6 +17,7 @@ public class LoadAddressable : MonoBehaviour
 
     private IEnumerator Load(AssetReference assetReference)
     {
+        //AsyncOperationHandle型の変数に生成したアセットの戻り値を格納できる
         _handle = assetReference.InstantiateAsync();
 
         yield return _handle;
@@ -36,6 +37,7 @@ public class LoadAddressable : MonoBehaviour
     {
         if (!_handle.IsValid()) return;
 
+        //アンロードした場合、そのアセットへの参照がなくなったら破棄される仕様らしい
         Addressables.ReleaseInstance(_handle);
 
         Debug.Log("AddressableAssetをアンロードしました");
