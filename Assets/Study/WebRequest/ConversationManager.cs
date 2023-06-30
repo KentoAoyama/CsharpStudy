@@ -8,7 +8,7 @@ using Cysharp.Threading.Tasks;
 public class ConversationManager : MonoBehaviour
 {
     [SerializeField]
-    private WebRequestAPI _requestAPI;
+    private ChatGPTConnection _gptConnection;
 
     [SerializeField]
     private Text _responceText = default;
@@ -19,17 +19,31 @@ public class ConversationManager : MonoBehaviour
     [SerializeField]
     private Button _sendRequestButton = default;
 
+    [SerializeField]
+    private Text _responceWaiting = default;
+
     private void Start()
     {
-        _sendRequestButton
-            .OnClickAsObservable()
-            .Subscribe(_ => SendRequest().Forget());
+        //SecretKeyの値を持つstaticクラスを使用する
+        _gptConnection = new(ChatGPTSecretKey.key);
+
+        if (_sendRequestButton != null)
+            _sendRequestButton
+                .OnClickAsObservable()
+                .Subscribe(_ => SendRequest().Forget());
     }
 
     private async UniTask SendRequest()
     {
-        await _requestAPI.SendChatGPTRequest(_requestInputField.text);
+        if (_responceWaiting != null)
+            _responceWaiting.text = "ChatGPT Responce Waiting!!";
 
-        _responceText.text = _requestAPI.ResponceText;
+        await _gptConnection.RequestAsync(_requestInputField.text);
+
+        if (_responceWaiting != null)
+            _responceWaiting.text = "ChatGPT Responce Returned!!";
+
+        if (_responceText != null)
+            _responceText.text = _gptConnection.GetCurrentMessage();
     }
 }
