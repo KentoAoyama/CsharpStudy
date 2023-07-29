@@ -24,8 +24,8 @@ public class ConversationManager : MonoBehaviour
 
     private void Start()
     {
-        //SecretKeyの値を持つstaticクラスを使用する
-        _gptConnection = new(ChatGPTSecretKey.key);
+        //インスタンス化する際にSecretKeyの値を渡す
+        _gptConnection = new(ChatGPTSecretKey.KEY);
 
         if (_sendRequestButton != null)
             _sendRequestButton
