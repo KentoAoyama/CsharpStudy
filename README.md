@@ -11,3 +11,4 @@
 * Zenject
 * UnityWebRequest
 * AssetBundle
+* Addressable Asset System
