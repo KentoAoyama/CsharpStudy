@@ -97,6 +97,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.search.extensions": {
+      "version": "https://github.com/Unity-Technologies/com.unity.search.extensions.git?path=package",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a2009acdeb14dbdad9653a5c8758874ef0304a32"
+    },
     "com.unity.services.core": {
       "version": "1.6.0",
       "depth": 1,
